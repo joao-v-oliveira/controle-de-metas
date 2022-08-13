@@ -11,7 +11,7 @@ import { MaterialModule } from './components/angular-material/material/material.
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
