@@ -1,20 +1,44 @@
 .contener{
-  height: calc(100% - 7rem);
+  min-height: calc(100% - 4rem);
   padding: 1.5rem;
   background-color: #EAEAEA;
 }
 
 .quadro-dados{
-  height: calc(100% - 2rem);
-  padding: 1rem;
+  min-height: 45rem;
+  padding: 2rem;
   background-color: #FFFFFF;
 }
 
 .titulo-inicio{
+  align-items: center;
+
   font-family: 'Red Hat Display';
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
   line-height: 140%;
   padding: 1rem;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.alinhamento{
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-criar{
+  width: 100%;
+  height: 45px;
+  float: right;
+  background-color: #3F51B5;
+}
+
+.ver-dados{
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }

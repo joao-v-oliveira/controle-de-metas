@@ -18,7 +18,7 @@ import { MaterialModule } from './components/angular-material/material/material.
     AppRoutingModule,
     InicioModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

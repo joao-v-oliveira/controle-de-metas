@@ -1,9 +1,15 @@
 <div class="contener">
   <div class="quadro-dados">
-    <div class="row">
-      <div class="col-md-12 titulo-inicio">
-        <h1>Minhas Metas</h1>
+    <div class="row" style="display: flex;">
+      <div class="col-md-10 titulo-inicio">
+        <h1>{{tituloinicio}}</h1>
       </div>
+      <div class="col-md-2 ver-dados">
+        <label style="padding-right: 10px;">Ver meus dados</label>
+        <mat-slide-toggle [(ngModel)]="verDados"></mat-slide-toggle>
+      </div>
+    </div>
+    <div class="row" *ngIf="verDados">
       <app-painel-expansion></app-painel-expansion>
     </div>
   </div>
