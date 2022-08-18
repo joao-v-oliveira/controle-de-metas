@@ -17,9 +17,9 @@ https://www.figma.com/file/Cb46eSxHoG9IwDQ3Xfr7vo/Projeto-Angular-P%C3%B3s-Java?
 - [ ] Apresentar as telas com layout responsivo usando ou não algum framework CSS.
 - [ ] Construir páginas web com o conceito de componentes.
 - [x] Criar o layout da aplicação com componentes, ou seja, o cabeçalho e rodapé precisam ser componentes.
-- [ ] Usar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).
+- [X] Usar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).
 - [ ] Passar dados via hierarquia de componentes, ou seja, usando @Input ou @Output.
-- [ ] Mapear componentes à rotas no módulo de rotas.
+- [X] Mapear componentes à rotas no módulo de rotas.
 - [ ] Criar navegação entre páginas por meio de rotas.
 - [ ] Passar dados entre componentes que representam diferentes telas via parâmetros de rotas.
 - [ ] Validar campos do formulário com REGEX e apresentar os erros.
