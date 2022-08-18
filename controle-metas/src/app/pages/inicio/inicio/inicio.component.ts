@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioComponent implements OnInit {
 
-  constructor() { }
+  public tituloinicio: string = '';
+  public verDados: boolean = false;
+
+  constructor() {
+    this.tituloinicio = 'Minhas Metas'
+  }
 
   ngOnInit(): void {
   }

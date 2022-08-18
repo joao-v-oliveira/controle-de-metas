@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [],
@@ -11,12 +15,18 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     CommonModule,
     MatToolbarModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatCheckboxModule
   ],
   exports: [
     MatToolbarModule,
     MatExpansionModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

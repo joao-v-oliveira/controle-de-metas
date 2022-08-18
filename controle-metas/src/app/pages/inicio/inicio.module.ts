@@ -5,6 +5,7 @@ import { InicioRoutingModule } from './inicio-routing.module';
 import { InicioComponent } from './inicio/inicio.component';
 import { MaterialModule } from 'src/app/components/angular-material/material/material.module';
 import { PainelExpansionComponent } from 'src/app/components/painel-expansion/painel-expansion.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PainelExpansionComponent } from 'src/app/components/painel-expansion/pa
     CommonModule,
     InicioRoutingModule,
     MaterialModule,
+    FormsModule
   ]
 })
 export class InicioModule { }
