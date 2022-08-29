@@ -4,13 +4,10 @@
       <div class="col-md-10 titulo-inicio">
         <h1>{{tituloinicio}}</h1>
       </div>
-      <div class="col-md-2 ver-dados">
-        <label style="padding-right: 10px;">Ver meus dados</label>
-        <mat-slide-toggle [(ngModel)]="verDados"></mat-slide-toggle>
+      <div class="col-md-2 div-btn-criar">
+        <button mat-raised-button class="btn-criar" [routerLink]="['/cadastro', null]">CRIAR META</button>
       </div>
     </div>
-    <div class="row" *ngIf="verDados">
-      <app-painel-expansion></app-painel-expansion>
-    </div>
+    <app-painel-expansion [listametas]="listametas"></app-painel-expansion>
   </div>
 </div>

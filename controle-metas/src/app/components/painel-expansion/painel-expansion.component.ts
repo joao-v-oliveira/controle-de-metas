@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-painel-expansion',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./painel-expansion.component.scss']
 })
 export class PainelExpansionComponent implements OnInit {
+
+  @Input() listametas!: any[];
 
   constructor() { }
 

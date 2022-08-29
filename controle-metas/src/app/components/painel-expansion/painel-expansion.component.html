@@ -1,13 +1,22 @@
-<mat-accordion>
+<mat-accordion *ngFor="let meta of listametas">
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        (Nome da Meta)
+        {{meta.nome}}
       </mat-panel-title>
       <mat-panel-description>
         <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
       </mat-panel-description>
     </mat-expansion-panel-header>
-    <p>Aqui será mostrado os dados da meta</p>
+    <div style="display: flex;">
+      <div class="col-md-11">
+        <p>Aqui será mostrado os dados da meta</p>
+      </div>
+      <div class="col-md-1">
+        <button mat-icon-button style="float: right;">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </div>
+    </div>
   </mat-expansion-panel>
 </mat-accordion>
