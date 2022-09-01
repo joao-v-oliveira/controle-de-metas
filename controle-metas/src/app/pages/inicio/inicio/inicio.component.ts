@@ -9,7 +9,7 @@ import { Meta } from 'src/app/model/meta';
 })
 export class InicioComponent implements OnInit {
 
-  public tituloinicio: string = '';
+  public tituloinicio: string = 'Minhas Metas';
   public verDados: boolean = false;
 
   public metaexemplo1 = {
@@ -38,17 +38,11 @@ export class InicioComponent implements OnInit {
   public listametas: Meta[]=[];
 
   constructor(private router: Router) {
-    this.tituloinicio = 'Minhas Metas'
-
     this.listametas.push(this.metaexemplo1);
     this.listametas.push(this.metaexemplo2);
   }
 
   ngOnInit(): void {
-  }
-
-  criarMeta(){
-
   }
 
 }

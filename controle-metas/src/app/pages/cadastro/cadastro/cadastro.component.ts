@@ -10,7 +10,9 @@ export class CadastroComponent implements OnInit {
 
   @Input() meta!: Meta;
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
