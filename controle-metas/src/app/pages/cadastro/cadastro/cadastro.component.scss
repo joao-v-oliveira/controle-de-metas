@@ -19,3 +19,43 @@
   line-height: 140%;
   padding: 1rem;
 }
+
+.espaco-row{
+  padding: 1rem;
+}
+
+.botoes{
+  display: flex;
+  align-items: baseline;
+  justify-content: end;
+}
+
+.btn-salvar{
+  width: 200px;
+  height: 40px;
+  color: #FFFFFF;
+  background-color: #00FF00;
+  float: right;
+}
+
+.btn-cancelar{
+  width: 200px;
+  height: 40px;
+  color: #FFFFFF;
+  background-color: #FF3030;
+  float: right;
+}
+
+:host{
+  ::ng-deep{
+    ::ng-deep{
+      mat-form-field{
+        font-size: 18px !important;
+        width: 100%;
+      }
+      textarea.mat-input-element{
+        max-height: 193px !important;
+      }
+    }
+  }
+}

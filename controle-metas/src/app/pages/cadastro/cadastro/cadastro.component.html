@@ -1,9 +1,72 @@
 <div class="contener">
   <div class="quadro-dados">
-    <div class="row" style="display: flex;">
-      <div class="col-md-10 titulo-inicio">
-        <h1>Cadastro de Meta</h1>
+    <form [formGroup]="formMeta">
+      <div class="row" style="display: flex;">
+        <div class="col-md-10 titulo-inicio">
+          <h1>Cadastro de Meta</h1>
+        </div>
+        <div class="col-md-2">
+          <h1 style="float: right;">Status</h1>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-6">
+          <mat-form-field appearance="legacy">
+            <mat-label>Nome</mat-label>
+            <input matInput pattern="([aA-zZ\s]+)" formControlName="nome" placeholder="Ex: Comprar Casa" (change)="validaCampo('nome')">
+          </mat-form-field>
+        </div>
+        <div class="col-xl-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Data de Ínicio</mat-label>
+            <input matInput formControlName="inicio" [matDatepicker]="picker" (click)="picker.open()" (change)="validaData('inicio')">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Previsão de Término</mat-label>
+            <input matInput formControlName="previsao" [matDatepicker]="picker2" (click)="picker2.open()" (change)="validaData('previsao')">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-12">
+          <mat-form-field appearance="legacy">
+            <mat-label>Descrição</mat-label>
+            <textarea rows="8" formControlName="descricao" matInput (change)="validaCampo('descricao')"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-12">
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-12 botoes">
+          <div class="col-xl-8"></div>
+          <div class="col-xl-2">
+            <button class="btn-cancelar" [routerLink]="['/inicio']" mat-raised-button>CANCELAR</button>
+          </div>
+          <div class="col-xl-2">
+            <button class="btn-salvar" mat-raised-button [disabled]="!formMeta.valid" (click)="salvarMeta()">SALVAR</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- <div class="row">
+      <div class="col-md-12 titulo-inicio">
+        <h1>Tipo de Meta</h1>
       </div>
     </div>
-  </div>
+    <div class="row espaco-row">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="1">Meta de Dinheiro</mat-radio-button>
+        <mat-radio-button value="2">Meta de Objetivos</mat-radio-button>
+      </mat-radio-group>
+    </div> -->
 </div>

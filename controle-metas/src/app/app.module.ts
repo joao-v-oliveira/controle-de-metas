@@ -7,6 +7,7 @@ import { InicioModule } from './pages/inicio/inicio.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './components/angular-material/material/material.module';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MaterialModule } from './components/angular-material/material/material.
     InicioModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
