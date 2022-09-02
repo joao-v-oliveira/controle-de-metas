@@ -59,13 +59,7 @@ export class CadastroComponent implements OnInit {
   }
 
   validaData(key: string){
-    console.log(this.formMeta.get(key)?.value);
-    if(this.formMeta.get(key)?.value != null){
-      let data = this.formMeta.get(key)?.value;
-      data = data.replace(/[^0-9]/g,'');
-
-      console.log(data);
-    }
+    //a fazer
   }
 
   salvarMeta(){
