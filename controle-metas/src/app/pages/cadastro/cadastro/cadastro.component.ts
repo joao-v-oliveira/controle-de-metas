@@ -69,21 +69,20 @@ export class CadastroComponent implements OnInit {
       "datainicio": this.getFormatDateSave(this.formMeta.get('inicio')?.value),
       "previsaotermino": this.getFormatDateSave(this.formMeta.get('previsao')?.value),
       "descricao": this.formMeta.get('descricao')?.value,
+      "status": 'Em progresso',
     }
 
-    //localStorage.setItem('metaLocalStorage', JSON.stringify(body));
-
-    this.cadastroService.postMeta(body).subscribe(
-      dados => {
-        setTimeout(() => {
+    this.cadastroService.postMetaPromisse(body)
+        .then(() => {
+          this.cadastroService.postMeta(body).subscribe();
+          this.toastr.success('Meta incluída com sucesso','Sucesso');
+        })
+        .catch(() => {
+          this.toastr.error('Erro ao tentar incluir uma meta, tente novamente!','Erro');
+        })
+        .finally(() => {
           this.router.navigate(['/inicio']);
-        },10);
-      },
-      error => {
-
-      }
-    );
-
+        });
 
   }
 

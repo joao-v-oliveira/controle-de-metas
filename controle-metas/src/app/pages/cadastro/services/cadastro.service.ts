@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Meta } from 'src/app/model/meta';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,19 @@ export class CadastroService {
 
   constructor(private http: HttpClient) { }
 
-  postMeta(body:any){
-    return this.http.post(`${this.URL}metas`,JSON.stringify(body), {headers: this.header})
+  postMeta(body: any){
+    return this.http.post(`${this.URL}metas`,JSON.stringify(body), {headers: this.header});
+  }
+
+  postMetaPromisse(body: any){
+    const promisse = new Promise<Meta>((resolve, reject) => {
+      if(body.valorinicial < 0){
+        reject('O valor inicial precisa ser um valor positivo ou zero(0)!');
+      }else{
+        localStorage.setItem('metaLocalStorage', JSON.stringify(body));
+        resolve(body);
+      }
+    });
+    return promisse;
   }
 }
