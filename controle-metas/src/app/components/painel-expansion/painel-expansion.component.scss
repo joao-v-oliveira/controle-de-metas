@@ -24,6 +24,27 @@
   padding: 1rem 0;
 }
 
+.status-orange{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FFA500;
+}
+
+.status-red{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #FF3030;
+}
+
+.status-green{
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19px;
+  color: #56C568;
+}
+
 ::ng-deep{
   mat-expansion-panel{
     background: #F4F4F4 !important;
@@ -40,6 +61,7 @@
     line-height: 22px;
   }
   mat-panel-description{
+    width: 100px;
     justify-content: end;
   }
   .mat-expansion-panel-body{

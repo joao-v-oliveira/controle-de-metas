@@ -10,7 +10,9 @@
         </div>
       </mat-panel-title>
       <mat-panel-description>
-        {{meta.status}}
+        <span *ngIf="meta.status == 'Em progresso'" class="status-orange">{{meta.status}}</span>
+        <span *ngIf="meta.status == 'Cancelado'" class="status-red">{{meta.status}}</span>
+        <span *ngIf="meta.status == 'Finalizado'" class="status-green">{{meta.status}}</span>
       </mat-panel-description>
     </mat-expansion-panel-header>
     <div style="display: flex;">
