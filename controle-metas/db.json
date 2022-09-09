@@ -1,0 +1,41 @@
+{
+  "metas": [
+    {
+      "id": 1,
+      "titulo": "Comprar Casa",
+      "datainicio": "2022-09-08",
+      "previsaotermino": "2022-12-31",
+      "descricao": "Donec vitae nulla scelerisque, hendrerit nunc in, mollis velit. Morbi congue facilisis quam. Phasellus arcu sem, sagittis eu rutrum vel, blandit auctor turpis. Sed quis faucibus lectus, a eleifend ante. Vestibulum faucibus ex at tempus fringilla. Praesent eu elementum elit. Nullam consequat purus quis purus egestas fringilla",
+      "tipometa": "Minha meta é casar e comprar uma casa",
+      "valorinicial": null,
+      "valorfinal": null,
+      "objetivos": [
+        {
+          "descricao": "Orçamento dos materiais",
+          "completo": false
+        }
+      ],
+      "status": "Em progresso"
+    },
+    {
+      "id": 2,
+      "titulo": "Comprar Carro",
+      "datainicio": "2022-09-08",
+      "previsaotermino": "2022-12-31",
+      "descricao": "Minha meta é comprar uma ferrari",
+      "tipometa": 1,
+      "valorinicial": 1500,
+      "valorfinal": 180000,
+      "objetivos": [],
+      "status": "Cancelado"
+    },
+    {
+      "titulo": "Comprar bicicleta",
+      "datainicio": "2022-09-08",
+      "previsaotermino": "2022-09-30",
+      "descricao": "Comprar uma bicicleta até o fim do mês",
+      "status": "Em progresso",
+      "id": 3
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+.custom-description{
+  width: 800px;
+}
+
+.progresso{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.titulos-metas{
+  font-weight: 500;
+  font-size: 18px;
+  color: #9DA3AC;
+}
+
+.info-metas{
+  font-weight: 500;
+  font-size: 24px;
+  color: #323232;
+}
+
+.espaco-row{
+  padding: 1rem 0;
+}
+
+::ng-deep{
+  mat-expansion-panel{
+    background: #F4F4F4 !important;
+  }
+  mat-expansion-panel-header{
+    border: 1px solid #000000 !important;
+  }
+  mat-panel-title{
+    width: 70% !important;
+    justify-content: space-between;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+  }
+  mat-panel-description{
+    justify-content: end;
+  }
+  .mat-expansion-panel-body{
+    padding: 2rem 0 2rem 1rem  !important;
+    background-color: #fff !important;
+    border: 1px solid #000000 !important;
+  }
+}

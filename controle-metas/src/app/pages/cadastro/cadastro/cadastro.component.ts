@@ -6,6 +6,7 @@ import { MomentDateAdapter, MomentDateModule } from '@angular/material-moment-ad
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
+import { CadastroService } from '../services/cadastro.service';
 
 export const DATE_FORMAT = {
   parse: {
@@ -35,7 +36,7 @@ export class CadastroComponent implements OnInit {
 
   public formMeta: FormGroup;
 
-  constructor(private router: Router,private toastr: ToastrService) {
+  constructor(private router: Router,private toastr: ToastrService, private cadastroService: CadastroService) {
     this.formMeta = new FormGroup({
       nome: new FormControl('', [Validators.required, Validators.minLength(8)]),
       inicio: new FormControl(null, Validators.required),
@@ -64,15 +65,26 @@ export class CadastroComponent implements OnInit {
 
   salvarMeta(){
     let body = {
-      "nome": this.formMeta.get('nome')?.value,
-      "inicio": this.getFormatDateSave(this.formMeta.get('inicio')?.value),
-      "previsao": this.getFormatDateSave(this.formMeta.get('previsao')?.value),
+      "titulo": this.formMeta.get('nome')?.value,
+      "datainicio": this.getFormatDateSave(this.formMeta.get('inicio')?.value),
+      "previsaotermino": this.getFormatDateSave(this.formMeta.get('previsao')?.value),
       "descricao": this.formMeta.get('descricao')?.value,
     }
 
-    localStorage.setItem('metaLocalStorage', JSON.stringify(body));
+    //localStorage.setItem('metaLocalStorage', JSON.stringify(body));
 
-    this.router.navigate(['/inicio']);
+    this.cadastroService.postMeta(body).subscribe(
+      dados => {
+        setTimeout(() => {
+          this.router.navigate(['/inicio']);
+        },10);
+      },
+      error => {
+
+      }
+    );
+
+
   }
 
   getFormatDateSave(data:string): string{

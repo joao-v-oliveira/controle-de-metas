@@ -1,4 +1,5 @@
 export class Meta{
+  idmeta: number=0;
   nome: string='';
   datainicio: string='';
   previsaotermino: string='';

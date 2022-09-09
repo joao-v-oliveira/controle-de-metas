@@ -2,20 +2,65 @@
   <mat-expansion-panel hideToggle>
     <mat-expansion-panel-header>
       <mat-panel-title>
-        {{meta.nome}}
+        {{meta.titulo}}
+        <div>
+          <div>
+            <mat-progress-bar class="custom-description" mode="determinate" value="40"></mat-progress-bar>
+          </div>
+        </div>
       </mat-panel-title>
       <mat-panel-description>
-        <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>
+        {{meta.status}}
       </mat-panel-description>
     </mat-expansion-panel-header>
     <div style="display: flex;">
-      <div class="col-md-11">
-        <p>Aqui será mostrado os dados da meta</p>
-      </div>
-      <div class="col-md-1">
-        <button mat-icon-button style="float: right;">
-          <mat-icon>more_vert</mat-icon>
+      <div class="col-md-12">
+        <button mat-icon-button style="float: right;" [routerLink]="['/cadastro', meta.idmeta]">
+          <mat-icon>edit</mat-icon>
         </button>
+        <div class="row">
+          <div class="col-md-2 progresso">
+            <mat-progress-spinner
+              color="primary"
+              mode="determinate"
+              value="50">
+            </mat-progress-spinner>
+          </div>
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-2 titulos-metas">
+                Nome
+              </div>
+              <div class="col-md-2 titulos-metas">
+                Data Ínicio
+              </div>
+              <div class="col-md-2 titulos-metas">
+                Previsão de Término
+              </div>
+            </div>
+            <div class="row espaco-row">
+              <div class="col-md-2 info-metas">
+                {{meta.titulo}}
+              </div>
+              <div class="col-md-2 info-metas">
+                {{meta.datainicio}}
+              </div>
+              <div class="col-md-2 info-metas">
+                {{meta.previsaotermino}}
+              </div>
+            </div>
+            <div class="row espaco-row">
+              <div class="col-md-2 titulos-metas">
+                Descriçao
+              </div>
+            </div>
+            <div class="row espaco-row">
+              <div class="col-md-12 info-metas">
+                {{meta.descricao}}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </mat-expansion-panel>
