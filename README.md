@@ -14,7 +14,7 @@ https://www.figma.com/file/Cb46eSxHoG9IwDQ3Xfr7vo/Projeto-Angular-P%C3%B3s-Java?
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - [x] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro)
-- [X] Apresentar as telas com layout responsivo usando ou não algum framework CSS.
+- [ ] Apresentar as telas com layout responsivo usando ou não algum framework CSS.
 - [X] Construir páginas web com o conceito de componentes.
 - [x] Criar o layout da aplicação com componentes, ou seja, o cabeçalho e rodapé precisam ser componentes.
 - [X] Usar pelo menos dois tipos de data-binding (Interpolation, Property Binding, Event Binding e Two Way Data Binding).
@@ -29,4 +29,4 @@ https://www.figma.com/file/Cb46eSxHoG9IwDQ3Xfr7vo/Projeto-Angular-P%C3%B3s-Java?
 - [X] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [X] Usar a diretiva ngIf
 - [ ] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [X] Build e deploy da aplicação.
