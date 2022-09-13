@@ -4,7 +4,7 @@ Este sistema tem como objetivo controlar metas a serem cumpridas, nele você pod
 
 # Endereço de Deploy - GitHub Pages
 
-Em breve
+https://joao-v-oliveira.github.io/controle-de-metas/inicio
 
 # Protótipo
 
