@@ -5,7 +5,7 @@
         {{meta.titulo}}
         <div>
           <div>
-            <mat-progress-bar class="custom-description" mode="determinate" value="40"></mat-progress-bar>
+            <mat-progress-bar class="custom-description" mode="determinate" [value]="meta.progresso"></mat-progress-bar>
           </div>
         </div>
       </mat-panel-title>
@@ -17,7 +17,7 @@
     </mat-expansion-panel-header>
     <div style="display: flex;">
       <div class="col-md-12">
-        <button mat-icon-button style="float: right;" [routerLink]="['/cadastro', meta.idmeta]">
+        <button mat-icon-button style="float: right;" [routerLink]="['/cadastro', meta.id]">
           <mat-icon>edit</mat-icon>
         </button>
         <div class="row">
@@ -25,7 +25,7 @@
             <mat-progress-spinner
               color="primary"
               mode="determinate"
-              value="50">
+              [value]="meta.progresso">
             </mat-progress-spinner>
           </div>
           <div class="col-md-10">
@@ -45,10 +45,10 @@
                 {{meta.titulo}}
               </div>
               <div class="col-md-2 info-metas">
-                {{meta.datainicio}}
+                {{getFormatDate(meta.datainicio)}}
               </div>
               <div class="col-md-2 info-metas">
-                {{meta.previsaotermino}}
+                {{getFormatDate(meta.previsaotermino)}}
               </div>
             </div>
             <div class="row espaco-row">

@@ -1,14 +1,14 @@
 export class Meta{
   idmeta: number=0;
-  nome: string='';
+  titulo: string='';
   datainicio: string='';
   previsaotermino: string='';
   descricao: string='';
-  tipometa: number=1;
+  tipometa: boolean = false;
   valorinicial: number=0;
   valorobjetivo: number=0;
   objetivos: Objetivo[]=[];
-  status: boolean=false;
+  progresso: number=0;
 }
 
 export class Objetivo{

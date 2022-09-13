@@ -19,6 +19,10 @@ export class CadastroService {
     return this.http.post(`${this.URL}metas`,JSON.stringify(body), {headers: this.header});
   }
 
+  putMeta(id: number,body: any){
+    return this.http.put(`${this.URL}metas/${id}`,JSON.stringify(body), {headers: this.header});
+  }
+
   postMetaPromisse(body: any){
     const promisse = new Promise<Meta>((resolve, reject) => {
       if(body.valorinicial < 0){
@@ -29,5 +33,9 @@ export class CadastroService {
       }
     });
     return promisse;
+  }
+
+  getMeta(id: number){
+    return this.http.get(`${this.URL}metas/${id}`, {headers: this.header});
   }
 }
