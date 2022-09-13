@@ -1,0 +1,43 @@
+.contener{
+  min-height: calc(100% - 4rem);
+  padding: 1.5rem;
+  background-color: #EAEAEA;
+}
+
+.quadro-dados{
+  min-height: 45rem;
+  padding: 2rem;
+  background-color: #FFFFFF;
+}
+
+.titulo-inicio{
+  align-items: center;
+
+  font-family: 'Red Hat Display';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 140%;
+  padding: 1rem;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.alinhamento{
+  align-items: center;
+  justify-content: center;
+}
+
+.div-btn-criar{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.btn-criar{
+  width: 138px;
+  background: #3F51B5;
+  color: #FFFFFF;
+}

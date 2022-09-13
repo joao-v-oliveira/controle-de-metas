@@ -1,0 +1,69 @@
+<mat-accordion *ngFor="let meta of listametas">
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{meta.titulo}}
+        <div>
+          <div>
+            <mat-progress-bar class="custom-description" mode="determinate" [value]="meta.progresso"></mat-progress-bar>
+          </div>
+        </div>
+      </mat-panel-title>
+      <mat-panel-description>
+        <span *ngIf="meta.status == 'Em progresso'" class="status-orange">{{meta.status}}</span>
+        <span *ngIf="meta.status == 'Cancelado'" class="status-red">{{meta.status}}</span>
+        <span *ngIf="meta.status == 'Finalizado'" class="status-green">{{meta.status}}</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div style="display: flex;">
+      <div class="col-md-12">
+        <button mat-icon-button style="float: right;" [routerLink]="['/cadastro', meta.id]">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <div class="row">
+          <div class="col-md-2 progresso">
+            <mat-progress-spinner
+              color="primary"
+              mode="determinate"
+              [value]="meta.progresso">
+            </mat-progress-spinner>
+          </div>
+          <div class="col-md-10">
+            <div class="row">
+              <div class="col-md-2 titulos-metas">
+                Nome
+              </div>
+              <div class="col-md-2 titulos-metas">
+                Data Ínicio
+              </div>
+              <div class="col-md-2 titulos-metas">
+                Previsão de Término
+              </div>
+            </div>
+            <div class="row espaco-row">
+              <div class="col-md-2 info-metas">
+                {{meta.titulo}}
+              </div>
+              <div class="col-md-2 info-metas">
+                {{getFormatDate(meta.datainicio)}}
+              </div>
+              <div class="col-md-2 info-metas">
+                {{getFormatDate(meta.previsaotermino)}}
+              </div>
+            </div>
+            <div class="row espaco-row">
+              <div class="col-md-2 titulos-metas">
+                Descriçao
+              </div>
+            </div>
+            <div class="row espaco-row">
+              <div class="col-md-12 info-metas">
+                {{meta.descricao}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

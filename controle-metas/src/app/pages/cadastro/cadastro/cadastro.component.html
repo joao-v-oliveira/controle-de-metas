@@ -1,0 +1,120 @@
+<div class="contener">
+  <div class="quadro-dados">
+    <form [formGroup]="formMeta">
+      <div class="row" style="display: flex;">
+        <div class="col-md-10 titulo-inicio">
+          <h1>Cadastro de Meta</h1>
+        </div>
+        <div class="col-md-2">
+          <h1 style="float: right;">Status</h1>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-6">
+          <mat-form-field appearance="legacy">
+            <mat-label>Nome</mat-label>
+            <input matInput pattern="([aA-zZ\s]+)" formControlName="nome" placeholder="Ex: Comprar Casa" (change)="validaCampo('nome')">
+          </mat-form-field>
+        </div>
+        <div class="col-xl-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Data de Ínicio</mat-label>
+            <input matInput formControlName="inicio" [matDatepicker]="picker" (click)="picker.open()">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-xl-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Previsão de Término</mat-label>
+            <input matInput formControlName="previsao" [matDatepicker]="picker2" (click)="picker2.open()">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-12">
+          <mat-form-field appearance="legacy">
+            <mat-label>Descrição</mat-label>
+            <textarea rows="8" formControlName="descricao" matInput (change)="validaCampo('descricao')"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 titulo-inicio">
+          <h1>Tipo de Meta</h1>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <mat-radio-group [(ngModel)]="tipoMeta" [ngModelOptions]="{standalone: true}">
+          <mat-radio-button [value]="false">Meta de Dinheiro</mat-radio-button>
+          <mat-radio-button [value]="true">Meta de Objetivos</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="row espaco-row" *ngIf="tipoMeta == false">
+        <div class="col-md-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Valor inicial</mat-label>
+            <input type="text" formControlName="valorinicial" matInput placeholder="0,00" (change)="formatValor(1)">
+          </mat-form-field>
+        </div>
+        <div class="col-md-3">
+          <mat-form-field appearance="legacy">
+            <mat-label>Valor total da meta</mat-label>
+            <input type="text" formControlName="valorobjetivo" matInput placeholder="100.000,00" (change)="formatValor(2)">
+          </mat-form-field>
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+      <div class="row espaco-row" *ngIf="tipoMeta">
+        <div class="row">
+          <div class="col-md-9">
+            <mat-form-field appearance="legacy">
+              <mat-label>Objetivo</mat-label>
+              <input matInput [formControl]="objdescricao" placeholder="Ex: Realizar um orçamento na loja">
+            </mat-form-field>
+          </div>
+          <div class="col-md-3">
+            <button class="btn-add" mat-raised-button (click)="addObjetivo()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-12 div-cabecalho">
+          <div class="row espaco-row cabecalho">
+            <div class="col-md-1">
+              Status
+            </div>
+            <div class="col-md-11">
+              Objetivo
+            </div>
+          </div>
+          <div class="row espaco-row linha-tabela" *ngFor="let obj of objetivos">
+            <div class="col-md-1" style="padding: 0 1.5rem;">
+              <mat-checkbox [(ngModel)]="obj.completo" [ngModelOptions]="{standalone: true}"></mat-checkbox>
+            </div>
+            <div class="col-md-11">
+              {{obj.descricao}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-12">
+          <mat-divider></mat-divider>
+        </div>
+      </div>
+      <div class="row espaco-row">
+        <div class="col-xl-12 botoes">
+          <div class="col-xl-8"></div>
+          <div class="col-xl-2">
+            <button class="btn-cancelar" [routerLink]="['/inicio']" mat-raised-button>CANCELAR</button>
+          </div>
+          <div class="col-xl-2">
+            <button class="btn-salvar" mat-raised-button [disabled]="!formMeta.valid" (click)="salvarMeta()">SALVAR</button>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>

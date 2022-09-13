@@ -1,0 +1,13 @@
+<div class="contener">
+  <div class="quadro-dados">
+    <div class="row" style="display: flex;">
+      <div class="col-md-10 titulo-inicio">
+        <h1>{{tituloinicio}}</h1>
+      </div>
+      <div class="col-md-2 div-btn-criar">
+        <button mat-raised-button class="btn-criar" [routerLink]="['/cadastro', null]">CRIAR META</button>
+      </div>
+    </div>
+    <app-painel-expansion [listametas]="listametas"></app-painel-expansion>
+  </div>
+</div>
